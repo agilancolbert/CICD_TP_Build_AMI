@@ -5,7 +5,7 @@
         "base_ami": "ami-008320af74136c628",
         "instance_type": "t2.micro",
         "subnet_id": "subnet-05c52e0859b498620",
-        "temporary_security_group_source_cidrs": "54.78.171.139/32",
+        "ec2_ip": "",
         "associate_public_ip_address": "true"
     },
     "builders": [
@@ -17,7 +17,7 @@
             "instance_type": "{{user `instance_type`}}",
             "ssh_username": "{{user `ssh_username`}}",
             "ami_name": "AMI-Apache-{{timestamp}}",
-            "temporary_security_group_source_cidrs": "{{user `temporary_security_group_source_cidrs`}}",
+            "temporary_security_group_source_cidrs": "{{user `ec2_ip`}}",
             "associate_public_ip_address": "{{user `associate_public_ip_address`}}",
             "tags": {
                 "Name": "Packer-Ansible"
