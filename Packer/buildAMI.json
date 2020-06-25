@@ -17,7 +17,7 @@
             "instance_type": "{{user `instance_type`}}",
             "ssh_username": "{{user `ssh_username`}}",
             "ami_name": "AMI-Apache-{{timestamp}}",
-            "temporary_security_group_source_cidrs": "{{user `ec2_ip`}}",
+            "temporary_security_group_source_cidrs": "{{user `ec2_ip`}}/32",
             "associate_public_ip_address": "{{user `associate_public_ip_address`}}",
             "tags": {
                 "Name": "Packer-Ansible"
