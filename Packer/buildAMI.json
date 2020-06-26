@@ -29,8 +29,7 @@
             "temporary_security_group_source_cidrs": "{{user `temporary_security_group_source_cidrs`}}",
             "associate_public_ip_address": "{{user `associate_public_ip_address`}}",
             "tags": {
-                "Name": "{{user `env`}}-{{user `app_name`}}-AMI",
-                "Version": "{{user `version`}}"
+                "Name": "{{user `env`}}-{{user `app_name`}}-AMI"
             }
         }
     ],
