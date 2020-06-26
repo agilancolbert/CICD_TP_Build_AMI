@@ -53,7 +53,13 @@
         repo: "{{ app_repo }}"
         dest: /var/www/html
       notify:
-        - restart apache2
+        - restart apache2   
+        
+    - shell: systemctl status apache2.service
+      register: data
+      
+    - shell: journalctl -xe
+      register: data
 
   handlers:
     - name: restart apache2
