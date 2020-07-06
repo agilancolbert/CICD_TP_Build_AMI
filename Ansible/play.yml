@@ -57,7 +57,13 @@
       file:
         path: /var/www/html
         state: absent
-
+    #####     
+    - name: Create functionBDD.php
+      become: yes
+      template:
+        src: templates/functionBDD.php.j2
+        dest: /var/www/html/functionBDD.php
+    #####
     - name: Git checkout website
       become: yes
       git:
