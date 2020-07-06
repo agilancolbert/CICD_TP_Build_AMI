@@ -22,6 +22,10 @@
       become: yes
       apt: name=php-mysql update_cache=yes state=latest
       
+    - name: Install php module
+      become: yes
+      apt: name=libapache2-mod-php update_cache=yes state=latest
+      
     #####
 
     - name: enabled mod_rewrite
@@ -65,7 +69,7 @@
         dest: /var/www/html
       notify:
         - restart apache2
-        
+              
     #####     
     #- name: Create functionBDD.php
     #  become: yes
