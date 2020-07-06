@@ -67,11 +67,11 @@
         - restart apache2
         
     #####     
-    - name: Create functionBDD.php
-      become: yes
-      template:
-        src: templates/functionBDD.php.j2
-        dest: /var/www/html/functionBDD.php
+    #- name: Create functionBDD.php
+    #  become: yes
+    #  template:
+    #    src: templates/functionBDD.php.j2
+    #    dest: /var/www/html/functionBDD.php
     #####
 
   handlers:
