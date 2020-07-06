@@ -20,7 +20,7 @@
      
     - name: Install MySQL module for php
       become: yes
-      apt: name=php-mysql update_cache=yes state=late
+      apt: name=php-mysql update_cache=yes state=latest
       
     #####
 
