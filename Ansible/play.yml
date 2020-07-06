@@ -57,6 +57,15 @@
       file:
         path: /var/www/html
         state: absent
+
+    - name: Git checkout website
+      become: yes
+      git:
+        repo: "{{ app_repo }}"
+        dest: /var/www/html
+      notify:
+        - restart apache2
+        
     #####     
     - name: Create functionBDD.php
       become: yes
@@ -64,13 +73,6 @@
         src: templates/functionBDD.php.j2
         dest: /var/www/html/functionBDD.php
     #####
-    - name: Git checkout website
-      become: yes
-      git:
-        repo: "{{ app_repo }}"
-        dest: /var/www/html
-      notify:
-        - restart apache2   
 
   handlers:
     - name: restart apache2
